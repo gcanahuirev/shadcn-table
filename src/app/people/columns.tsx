@@ -83,7 +83,9 @@ export const columns: ColumnDef<Person>[] = [
   {
     id: "actions",
     cell: ({ row }) => {
-      const personId = row.original.first_name.toString();
+      const firstName = row.original.first_name.toString();
+      const lastName = row.original.last_name.toString();
+      const fullName = `${firstName} ${lastName} `;
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -95,10 +97,10 @@ export const columns: ColumnDef<Person>[] = [
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
               onClick={() => {
-                navigator.clipboard.writeText(personId);
+                navigator.clipboard.writeText(fullName);
               }}
             >
-              Copy person name
+              Copy full name
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
