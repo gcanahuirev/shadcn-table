@@ -89,7 +89,7 @@ export function PeopleDataTable<TData, TValue>({
         <ThemeToggle className="ml-4" />
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <Button variant="outline" className="ml-4">
+            <Button variant="outline" className="ml-4" asChild>
               Columns
             </Button>
           </DropdownMenuTrigger>
