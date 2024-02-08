@@ -3,8 +3,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <Button asChild>
-      <Link href="/people">Hello</Link>
-    </Button>
+    <div>
+      <Button asChild>
+        <Link href="/people">People</Link>
+      </Button>
+      <Button asChild>
+        <Link href="/registry">Registry</Link>
+      </Button>
+    </div>
   );
 }

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
+import { Toaster } from "@/components/ui/toaster";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   const [isClient, setIsClient] = useState(false);
@@ -17,5 +18,12 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     return null;
   }
 
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+  return (
+    <NextThemesProvider {...props}>
+      <div className="min-h-screen">
+        {children}
+        <Toaster />
+      </div>
+    </NextThemesProvider>
+  );
 }
